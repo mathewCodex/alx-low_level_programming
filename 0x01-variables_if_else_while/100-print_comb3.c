@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
-  * main - print 00 to 99
-  *
-  * Return: zzero
-  */
+ * main - print 00 to 99
+ *
+ * Return: zero
+ */
 int main(void)
 {
 	int num1;
