@@ -1,4 +1,4 @@
-#include <sdio.h>
+#include <stdio.h>
 
 /**
  * main - Print lowercase Alphabet
