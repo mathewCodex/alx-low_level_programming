@@ -26,6 +26,6 @@ int main(void)
 			bef = aft;
 			aft = R;
 		}
-		printf("li\n", sum);
+		printf("%lu\n", sum);
 		return (0);
 }
