@@ -6,26 +6,33 @@
  */
 void more_numbers(void)
 {
-	int i, j;
+	int i;
+	int first_num;
+	int sec_num;
+	int result;
 
 	i = 0;
-	while (i <= 10)
+	result = 0;
+	while (i < 10)
 	{
-		j = 0;
-		while (j <= 14)
+	while (result <= 14)
+	{
+		if (result < 10)
 		{
-			if (j <= 9)
-			{
-				_putchar('0' + j);
-			}
-			else
-			{
-				_putchar('0' + j / 10);
-				_putchar('0' + j % 10);
-			}
-			j++;
+		sec_num = result;
 		}
-		_putchar('\n');
-		i++;
+
+		else
+		{
+		first_num = result / 10;
+		sec_num = result % 10;
+		_putchar (first_num + '0');
+		}
+		_putchar(sec_num + '0');
+		result++;
+	}
+	i++;
+	result = 0;
+	_putchar ('\n');
 	}
 }
