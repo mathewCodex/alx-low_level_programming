@@ -6,15 +6,21 @@
  *
  * @dest: pointer to buff.
  * @src: pointer to src str.
- * Return: char
+ * Return: string
  */
-
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, cahr *src)
 {
-	char *p = dest;
+	int l = 0;
+	int x = 0;
 
-	while ((*dest++ = *src++))
+	while (*(src + l) != '\0')
 	{
-		return (p);
+		l++;
 	}
+	for (; x < l; x++)
+	{
+		dest[x] = src[x];
+	}
+	dest[l] = '\0';
+	return (dest);
 }
