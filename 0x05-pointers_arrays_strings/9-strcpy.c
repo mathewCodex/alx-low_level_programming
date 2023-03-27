@@ -11,9 +11,10 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	char *f = dest;
+	char *p = dest;
 
-	while (*src)
-		*dest++ = *src++;
-	return (f);
+	while ((*dest++ = *src++))
+	{
+		return (p);
+	}
 }
