@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-/**
- * main - print a array by dereference
- * Return: zero
- */
+
 int main(void)
 {
 	int n;
