@@ -1,21 +1,20 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
 * *_strchr - locates a char in a str
-*
-* @s: str
-* @c: char to be located
-* Return: pointer to first occurence of NULL if no char found
+* @s: input
+* @c: input
+* Return: Always 0
 */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	int i;
+
+	for (i = 0; s[i] >= '\0'; i++)
 	{
-		if (*s == c)
-		{
-			return (s);
-		}
-		s++;
+		if (s[i] == c)
+			return (s + i);
 	}
-	return (0);
+	return (NULL);
 }
