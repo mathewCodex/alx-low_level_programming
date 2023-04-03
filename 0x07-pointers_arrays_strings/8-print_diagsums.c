@@ -10,14 +10,18 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int m, sum, sum1;
+	int i;
+	int tl = 0;
+	int tr = 0;
+	int s = size * size;
 
-	sum = 0;
-
-	for (m = 0; m < size; m++)
-		sum += *(a + ((size * m) + m))
-	sum1 = 0;
-	for (m = 1; m < size; m++)
-		sum += *(a + ((size * m) - m))
-	printf("%d,%d/n", sum, sum1)
+	for (i = 0; i < s; i += size + 1)
+	{
+		tl += a[i];
+	}
+	for (i = size - 1; i < s - 1; i += size - 1)
+	{
+		tr += a[i];
+	}
+	printf("%d, %d\n", tl, tr);
 }
