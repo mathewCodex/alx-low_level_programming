@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			}
 			j++;
 		}
-		re += strtol(argv[i], NULL, 10);
+		res += strtol(argv[i], NULL, 10);
 	}
 	printf("%d\n", res);
 	return (0);
