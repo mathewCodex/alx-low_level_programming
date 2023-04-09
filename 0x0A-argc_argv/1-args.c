@@ -8,7 +8,7 @@
   */
 int main(int argc, char *argv[])
 {
-	printf("5d\n", argc - 1);
+	printf("%d\n", argc - 1);
 
 	return (sizeof(argv[0]) - sizeof(argv[0]));
 }
