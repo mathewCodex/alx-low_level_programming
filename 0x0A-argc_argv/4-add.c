@@ -1,36 +1,32 @@
 #include<stdio.h>
 #include <stdlib.h>
-
+#include <ctype.h>
 /**
  * main - print name of program
  * @argc:command line argument count
  * @argv:command line arguement array
  * Return:0
  */
-
 int main(int argc, char *argv[])
 {
-	int i, res, j;
+	int i, j, sum = 0;
 
 	if (argc == 1)
 	{
-		printf("0\n");
+		printf("%d\n", argc - 1);
 		return (0);
 	}
-	res = 0, j = 0;
 	for (i = 1; i < argc; i++)
 	{
-		while (argv[i][j])
-		{
-			if (!(argv[i][j] >= "1" && argv[i][j] <= "9"))
+		for (j = 0; argv[i][j] != '\0'; j++)
+			if (!((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-'))
 			{
 				printf("Error\n");
-				return (0);
+				return (1);
 			}
-			j++;
-		}
-		res += strtol(argv[i], NULL, 10);
+		sum += atoi(argv[i]);
 	}
-	printf("%d\n", res);
+	printf("%d\n", sum);
 	return (0);
 }
+
