@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		num = atoi(argv[1]);
 		if (num > 0)
 		{
-			for (; num > = 25; change++)
+			for (; num >= 25; change++)
 			{
 				num = num - 25;
 			}
