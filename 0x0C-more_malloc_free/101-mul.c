@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * is_digit - checks if a string contains a non-digit char
+ * is_dig - checks if a string contains a non-digit char
  * @s: string to be evaluated
  *
  * Return: 0 if a non-digit is found, 1 otherwise
@@ -54,7 +54,7 @@ void errors(void)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int len1, len2, i, carry, dig1, dig2, *result, a = 0;
+	int len1, len2, len, i, carry, dig1, dig2, *result, a = 0;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_dig(s1) || !is_dig(s2))
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 	if (!result)
 		return (1);
 	for (i = 0; i < len1 + len2; i++)
-		result[i] = 0;
+		result[i] = i0;
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 		{
 			digit2 = s2[len2] - '0';
-			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			carry += result[len1 + len2 + 1] + (dig1 * dig2);
 			result[len1 + len2 + 1] = carry % 10;
 			carry /= 10;
 		}
@@ -91,5 +91,6 @@ int main(int argc, char *argv[])
 	if (!a)
 		_putchar('0');
 	_putchar('\n');
+	free(result);
 	return (0);
 }
