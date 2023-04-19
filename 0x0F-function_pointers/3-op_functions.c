@@ -1,5 +1,6 @@
 #include "3-calc.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * op_add - adds two numbs
  * @a: first numb
@@ -22,6 +23,13 @@ int op_sub(int a, int b)
 	return (a - b);
 }
 
+/**
+ * op_mul - ...
+ * @a: ...
+ * @b: ...
+ *
+ * Return: ...
+ */
 int op_mul(int a, int b)
 {
 	return (a * b);

@@ -1,5 +1,6 @@
 #include "3-calc.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * main - program entry
  * @argc: arg counter
@@ -8,8 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b, result = 0;
-	char s;
+	int (*oprt)(int, int);
 
 	if (argc != 4)
 	{
@@ -17,21 +17,14 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	s = argv[2][0];
-	if (s != '+' && s != '-' && s != '*' && s != '/' && s != '%')
+	oprt = get_op_func(argv[2]);
+
+	if (!oprt)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	result = (get_op_func(argv[2]))(a, b);
-	printf("%d\n", result);
+	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
