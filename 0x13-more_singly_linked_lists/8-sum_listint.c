@@ -7,12 +7,8 @@
  */
 int sum_listint(listint_t *head)
 {
-	int initialSumVal = 0;
-	listint_t *t;
-
-	if (head == NULL)
-		return (0);
-	t = head;
+	size_t initialSumVal = 0;
+	listint_t *t = head;
 
 	while (t != NULL)
 	{
