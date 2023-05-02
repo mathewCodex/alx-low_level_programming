@@ -11,16 +11,14 @@ int pop_listint(listint_t **head)
 	int nodeData;
 	listint_t *t;
 
-	h = *head;	/* let h =*head */
-
-	if (!h)
+	if (!head || !*head)
 	{
 		return (0);
 	}
-	nodeData = (h)->n;
-	t = (h)->next;
-	free(h);
-	h = t
+	nodeData = (*head)->n;
+	t = (*head)->next;
+	free(*head);
+	*head = t;
 	return (nodeData);
 }
 
