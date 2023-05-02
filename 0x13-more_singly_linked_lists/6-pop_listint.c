@@ -13,15 +13,14 @@ int pop_listint(listint_t **head)
 
 	h = *head;	/* let h =*head */
 
-	if (h == NULL)
+	if (!h)
 	{
 		return (0);
 	}
-	t = h;
-	nodeData = t->n;
-	h = (h)->next;
-	t->next = NULL;
-	free(t);
+	nodeData = (h)->n;
+	t = (h)->next;
+	free(h);
+	h = t
 	return (nodeData);
 }
 
