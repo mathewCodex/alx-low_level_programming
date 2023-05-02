@@ -4,34 +4,35 @@
  * * delete_nodeint_at_index - deletes the node at idx of link list
  * @head: pointer to pointer to head
  * @index: pos of the node to be del
- * Return: 1 if ok else -1
+ * Return: 1 if ok else -i
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i;
-	listint_t *t, *nxt;
+	listint_t *t, *next;
 
-	/* if list is empty */
+	/* if empty link */
 	if (*head == NULL)
 		return (-1);
+
 	t = *head;
-	/*if head need to be removed*/
+	/* if head needs to be removed */
 	if (index == 0)
 	{
-		*head = t->nxt; /* change the head */
-		free(t); /*fre old head */
-		return (1); /* success */
+		*head = t->next; /*change head*/
+		free(t); /*free old head*/
+		return (1); /*success*/
 	}
 	for (i = 0; t != NULL && i < index - 1; i++)
 	{
-		t = t->nxt;
+		t = t->next;
 	}
 	/* if idx is greater than number of nodes */
-	if (t == NULL || t->nxt == NULL)
+	if (t == NULL || t->next == NULL)
 		return (-1);
-	nxt = t->nxt->nxt;
+	next = t->next->next;
 
-	free(t->nxt);
-	t->nxt = nxt;
+	free(t->next);
+	t->next = next;
 	return (1);
 }
