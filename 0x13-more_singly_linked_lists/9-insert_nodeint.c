@@ -7,37 +7,32 @@
  * @n: elem to input
  * Return: address of new node
  */
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n){
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+{
 	unsigned int i;
-	listint_t *new;
-	listint_t *temp = *head;
+	listint_t *t, *newNode;
 
-	new = malloc(sizeof(listint_t));
-	if (!new || !head)
+	t = *head;
+	newNode = malloc(sizeof(listint_t));
+	if (newNode == NULL)
 		return (NULL);
-
-	new->n = n;
-	new->next = NULL;
-
+	newNode->n = n;
+	newNode->next = NULL;
 	if (idx == 0)
 	{
-		new->next = *head;
-		*head = new;
-		return (new);
+		newNode->next = *head;
+		*head = newNode;
+		return (newNode);
 	}
-
-	for (i = 0; temp && i < idx; i++)
+	for (i = 0; i < idx - 1; i++)
 	{
-		if (i == idx - 1)
+		t = t->next;
+		if (t == NULL)
 		{
-			new->next = temp->next;
-			temp->next = new;
-			return (new);
+			return (NULL);
 		}
-		else
-			temp = temp->next;
 	}
-
-	return (NULL);
+	newNode->next = t->next;
+	t->next = newNode;
+	return (newNode);
 }
-
