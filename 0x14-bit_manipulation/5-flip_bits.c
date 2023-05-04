@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+
 /**
  * flip_bits - return the numb of bits
  * @n: first numb
