@@ -8,19 +8,35 @@
  */
 unsigned int binary_to_unit(const char *b)
 {
-	unsigned int i = 0, decimal = 0;
+	unsigned int i = 0, ct = 0, sum = 0;
 
 	if (b == NULL)
 		return (0);
-	while (b[i])
+
+	i = _strlen(b);
+	while (i--)
 	{
-		if (!(b[i] == '0' || b[i] == '1'))
-			return (0);
-		/* shifting decimal by 1 bit to the left */
-		decimal <<= 1;
-		if (b[i] == '1')
-			decimal += 1;
-		i++;
+		if (b[i] != 48 && b[i] != 49)
+		return (0);
+
+		if (b[i] == 49)
+			/* shift ct 1 bit left and assign it to sum and adding */
+			sum += 1 << ct;
+
+		ct++;
 	}
-	return (decimal);
+	return (sum);
+}
+/**
+ * _strlen - Rts the len of str
+ * @s: str to ct
+ * Return: str len
+ */
+int _strlen(const char *s)
+{
+	int c = 0;
+
+	while (s[c])
+		c++;
+	return (c);
 }
