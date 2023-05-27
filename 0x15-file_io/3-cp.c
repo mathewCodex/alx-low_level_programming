@@ -10,7 +10,7 @@
  * @argv: arg vector
  * Return: 0 all day
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int fd1, fd2, chars_read, chars_written, file_closed, file2_closed;
 	char *buf[1024];
